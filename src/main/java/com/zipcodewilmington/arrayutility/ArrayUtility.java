@@ -51,9 +51,7 @@ public class ArrayUtility<T> {
 
     public T[] removeValue(T valueToRemove)  {
         while (inputArray.contains(valueToRemove)) inputArray.remove(valueToRemove);
-        T[] result = Arrays.copyOf(originalInput, inputArray.size());
-        for (int i = 0; i < inputArray.size(); i++) result[i] = inputArray.get(i);
-        return result;
+        return inputArray.toArray(Arrays.copyOf(originalInput, inputArray.size()));
     }
     public ArrayList<T> mergeArrays(T[] arrayToMerge) {
         if (inputArray == null) return null;
